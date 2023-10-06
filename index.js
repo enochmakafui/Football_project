@@ -10,8 +10,6 @@ app.get("/",async (req,res)=>{
     try {
         const response = await axios.get(`https://www.scorebat.com/video-api/v3/feed/?token=${videoToken}`);
         const data = response.data;
-        console.log(data.response.length);
-        console.log(data);
         res.render("index.ejs",{data});
       } catch (error) {
         console.error("Failed to make request:", error.message);
